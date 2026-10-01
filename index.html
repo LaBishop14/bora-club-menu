@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bora Club Boracay | Menu</title>
+
+<style>
+
+/* ================================
+   GENERAL
+================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+    text-align: center;
+    padding: 35px 20px 20px;
+}
+
+.logo {
+    width: 210px;
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.header-title {
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+
+/* ================================
+   HOME PAGE
+================================ */
+
+.page {
+    display: none;
+    max-width: 1100px;
+    margin: auto;
+    padding: 10px 20px 50px;
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* ================================
+   MAIN MENU BUTTONS
+================================ */
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 500px;
+    margin: 35px auto;
+}
+
+.main-button {
+    width: 100%;
+    padding: 25px 20px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background: #ddd;
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   PAGE TITLE
+================================ */
+
+.page-title {
+    text-align: center;
+    margin: 20px 0 30px;
+}
+
+.page-title h1 {
+    font-size: 27px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.page-title p {
+    margin-top: 8px;
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* ================================
+   BACK BUTTON
+================================ */
+
+.back-button {
+    background: transparent;
+    color: white;
+    border: 1px solid #555;
+    padding: 10px 18px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.back-button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* ================================
+   CATEGORY GRID
+================================ */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.category-button {
+    background: #111;
+    border: 1px solid #444;
+    color: white;
+    padding: 22px 12px;
+    min-height: 75px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.category-button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* ================================
+   MENU ITEMS
+================================ */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.menu-card {
+    background: #111;
+    border: 1px solid #292929;
+    overflow: hidden;
+}
+
+.menu-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+}
+}
+
+.no-image {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-size: 13px;
+    background: #181818;
+}
+
+.menu-info {
+    padding: 18px;
+}
+
+.menu-name {
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.menu-description {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 38px;
+}
+
+.menu-price {
+    margin-top: 13px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* ================================
+   SEARCH
+================================ */
+
+.search-box {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px;
+    background: #111;
+    border: 1px solid #444;
+    color: white;
+    outline: none;
+    border-radius: 3px;
+}
+
+.search-box input::placeholder {
+    color: #666;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #555;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 650px) {
+
+    .header {
+        padding-top: 25px;
+    }
+
+    .logo {
+        width: 180px;
+    }
+
+    .main-button {
+        font-size: 17px;
+        padding: 22px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-image,
+    .no-image {
+        height: 250px;
+    }
+
+    .page-title h1 {
+        font-size: 22px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<div class="header">
+
+    <img
+        src="logo.png"
+        class="logo"
+        alt="Bora Club Boracay"
+    >
+
+    <div class="header-title">
+        Food & Drinks Menu
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     HOME PAGE
+========================================== -->
+
+<div
+    id="homePage"
+    class="page active"
+>
+
+    <div class="page-title">
+
+        <h1>Welcome</h1>
+
+        <p>
+            Explore our food and drinks
+        </p>
+
+    </div>
+
+
+    <div class="main-menu">
+
+        <button
+            class="main-button"
+            onclick="showPage('drinksPage')"
+        >
+            DRINKS MENU
+        </button>
+
+
+        <button
+            class="main-button"
+            onclick="showPage('foodPage')"
+        >
+            FOOD MENU
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     DRINKS CATEGORY PAGE
+========================================== -->
+
+<div
+    id="drinksPage"
+    class="page"
+>
+
+    <button
+        class="back-button"
+        onclick="showPage('homePage')"
+    >
+        ← Back
+    </button>
+
+
+    <div class="page-title">
+
+        <h1>Drinks</h1>
+
+        <p>
+            Select a category
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+        <button
+            class="category-button"
+            onclick="showCategory('Signature Cocktails')"
+        >
+            Signature Cocktails
+        </button>
+
+
+        <button
+            class="category-button"
+            onclick="showCategory('Tower Cocktails')"
+        >
+            Tower Cocktails
+        </button>
+
+
+        <button
+            class="category-button"
+            onclick="showCategory('Shots')"
+        >
+            Shots
+        </button>
+
+
+        <button
+            class="category-button"
+            onclick="showCategory('Party / Sharing')"
+        >
+            Party / Sharing
+        </button>
+
+
+        <button
+            class="category-button"
+            onclick="showCategory('Coffee')"
+        >
+            Coffee
+        </button>
+
+
+        <button
+            class="category-button"
+            onclick="showCategory('Classic Cocktails')"
+        >
+            Classic Cocktails
+        </button>
+
+
+        <button
+            class="category-button"
+            onclick="showCategory('Vodka Cocktails')"
+        >
+            Vodka Cocktails
+        </button>
+
+
+        <button
+            class="category-button"
+            onclick="showCategory('Gin Cocktails')"
+        >
+            Gin Cocktails
+        </button>
+
+
+        <button
+            class="category-button"
+            onclick="showCategory('Easy Mixers')"
+        >
+            Easy Mixers
+        </button>
+
+
+        <button
+            class="category-button"
+            onclick="showCategory('Mocktails')"
+        >
+            Mocktails
+        </button>
+
+
+        <button
+            class="category-button"
+            onclick="showCategory('Shakes')"
+        >
+            Shakes
+        </button>
+
+
+        <button
+            class="category-button"
+            onclick="showCategory('Spirits')"
+        >
+            Spirits
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     FOOD PAGE
+========================================== -->
+
+<div
+    id="foodPage"
+    class="page"
+>
+
+    <button
+        class="back-button"
+        onclick="showPage('homePage')"
+    >
+        ← Back
+    </button>
+
+
+    <div class="page-title">
+
+        <h1>Food Menu</h1>
+
+        <p>
+            Our food selection
+        </p>
+
+    </div>
+
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="foodSearch"
+            placeholder="Search food..."
+            onkeyup="displayFood()"
+        >
+
+    </div>
+
+
+    <div
+        id="foodGrid"
+        class="menu-grid"
+    >
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     DRINK CATEGORY ITEMS
+========================================== -->
+
+<div
+    id="categoryPage"
+    class="page"
+>
+
+    <button
+        class="back-button"
+        onclick="showPage('drinksPage')"
+    >
+        ← Back
+    </button>
+
+
+    <div class="page-title">
+
+        <h1 id="categoryTitle">
+            Category
+        </h1>
+
+    </div>
+
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="drinkSearch"
+            placeholder="Search drinks..."
+            onkeyup="displayDrinks()"
+        >
+
+    </div>
+
+
+    <div
+        id="drinkGrid"
+        class="menu-grid"
+    >
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<div class="footer">
+
+    BORA CLUB BORACAY
+
+</div>
+
+
+
+<script>
+
+
+/* ==========================================
+   FOOD MENU
+
+   CHANGE THE IMAGE FILE NAMES
+   AND PRICES HERE
+========================================== */
+
+
+const foodMenu = [
+
+    {
+        name: "Menchi Katsu",
+        price: "₱___",
+        description: "Add description here.",
+        image: "menchi-katsu.jpg"
+    },
+
+
+    {
+        name: "Crab Cream Croquettes",
+        price: "₱___",
+        description: "Add description here.",
+        image: "crab-cream-croquettes.jpg"
+    },
+
+
+    {
+        name: "Beef Quesadilla",
+        price: "₱___",
+        description: "Add description here.",
+        image: "beef-quesadilla.jpg"
+    },
+
+
+    {
+        name: "BoraClub Hamburger",
+        price: "₱___",
+        description: "Add description here.",
+        image: "boraclub-hamburger.jpg"
+    },
+
+
+    {
+        name: "Honey Glazed Wings",
+        price: "₱___",
+        description: "Add description here.",
+        image: "honey-glazed-wings.jpg"
+    },
+
+
+    {
+        name: "Buffalo Wings",
+        price: "₱___",
+        description: "Add description here.",
+        image: "buffalo-wings.jpg"
+    },
+
+
+    {
+        name: "U.S. Tenderloin",
+        price: "₱___",
+        description: "Add description here.",
+        image: "us-tenderloin.jpg"
+    },
+
+
+    {
+        name: "Calamari",
+        price: "₱___",
+        description: "Add description here.",
+        image: "calamari.jpg"
+    },
+
+
+    {
+        name: "Lechon Kawali",
+        price: "₱___",
+        description: "Add description here.",
+        image: "lechon-kawali.jpg"
+    },
+
+
+    {
+        name: "Beef Salpicao",
+        price: "₱___",
+        description: "Add description here.",
+        image: "beef-salpicao.jpg"
+    },
+
+
+    {
+        name: "Chicken Cordon Bleu",
+        price: "₱___",
+        description: "Add description here.",
+        image: "chicken-cordon-bleu.jpg"
+    },
+
+
+    {
+        name: "Baby Back Ribs",
+        price: "₱___",
+        description: "Add description here.",
+        image: "baby-back-ribs.jpg"
+    },
+
+
+    {
+        name: "Pork Steak",
+        price: "₱___",
+        description: "Add description here.",
+        image: "pork-steak.jpg"
+    },
+
+
+    {
+        name: "Garlic Butter Salmon",
+        price: "₱___",
+        description: "Add description here.",
+        image: "garlic-butter-salmon.jpg"
+    },
+
+
+    {
+        name: "Ahi Tuna Salad",
+        price: "₱___",
+        description: "Add description here.",
+        image: "ahi-tuna-salad.jpg"
+    },
+
+
+    {
+        name: "Frutti di Mare",
+        price: "₱___",
+        description: "Add description here.",
+        image: "frutti-di-mare.jpg"
+    },
+
+
+    {
+        name: "Creamy Seafood Pasta",
+        price: "₱___",
+        description: "Add description here.",
+        image: "creamy-seafood-pasta.jpg"
+    },
+
+
+    {
+        name: "Creamy Bolognese",
+        price: "₱___",
+        description: "Add description here.",
+        image: "creamybalognese.png"
+    },
+
+
+    {
+        name: "Carbonara",
+        price: "₱___",
+        description: "Add description here.",
+        image: "carbonara.png"
+    },
+
+
+    {
+        name: "Chicken Alfredo",
+        price: "₱___",
+        description: "Add description here.",
+        image: "chickenalfredo.png"
+    },
+
+
+    {
+        name: "Seafood Soup",
+        price: "₱",
+        description: "Add description here.",
+        image: "seafoodsoup.png"
+    }
+
+];
+
+
+
+/* ==========================================
+   DRINKS MENU
+
+   ADD YOUR DRINKS BELOW
+========================================== */
+
+
+const drinksMenu = [
+
+    /*
+    Example:
+
+    {
+        name: "Bora Club Signature",
+        category: "Signature Cocktails",
+        price: "₱350",
+        description: "Your description here.",
+        image: "bora-signature.jpg"
+    },
+
+    */
+
+
+    {
+        name: "Sample Signature Cocktail",
+        category: "Signature Cocktails",
+        price: "₱___",
+        description: "Add your drink here.",
+        image: "signature-cocktail.jpg"
+    }
+
+];
+
+
+
+/* ==========================================
+   SHOW PAGE
+========================================== */
+
+
+function showPage(pageID) {
+
+    document
+        .querySelectorAll(".page")
+        .forEach(page => {
+
+            page.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById(pageID)
+        .classList.add("active");
+
+
+    window.scrollTo(0, 0);
+
+
+    if (pageID === "foodPage") {
+
+        displayFood();
+
+    }
+
+}
+
+
+
+/* ==========================================
+   DISPLAY FOOD
+========================================== */
+
+
+function displayFood() {
+
+    const grid =
+        document.getElementById("foodGrid");
+
+
+    const search =
+        document
+            .getElementById("foodSearch")
+            .value
+            .toLowerCase();
+
+
+    grid.innerHTML = "";
+
+
+    const filtered =
+        foodMenu.filter(item =>
+
+            item.name
+                .toLowerCase()
+                .includes(search)
+
+        );
+
+
+    filtered.forEach(item => {
+
+        grid.innerHTML += `
+
+            <div class="menu-card">
+
+                ${createImage(item)}
+
+                <div class="menu-info">
+
+                    <div class="menu-name">
+                        ${item.name}
+                    </div>
+
+                    <div class="menu-description">
+                        ${item.description}
+                    </div>
+
+                    <div class="menu-price">
+                        ${item.price}
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+
+
+/* ==========================================
+   SHOW DRINK CATEGORY
+========================================== */
+
+
+function showCategory(category) {
+
+    document
+        .getElementById("categoryTitle")
+        .textContent = category;
+
+
+    document
+        .getElementById("drinkSearch")
+        .value = "";
+
+
+    showPage("categoryPage");
+
+
+    displayDrinks();
+
+}
+
+
+
+/* ==========================================
+   DISPLAY DRINKS
+========================================== */
+
+
+function displayDrinks() {
+
+    const category =
+        document
+            .getElementById("categoryTitle")
+            .textContent;
+
+
+    const search =
+        document
+            .getElementById("drinkSearch")
+            .value
+            .toLowerCase();
+
+
+    const grid =
+        document.getElementById("drinkGrid");
+
+
+    grid.innerHTML = "";
+
+
+    const filtered =
+        drinksMenu.filter(item =>
+
+            item.category === category &&
+
+            item.name
+                .toLowerCase()
+                .includes(search)
+
+        );
+
+
+    if (filtered.length === 0) {
+
+        grid.innerHTML = `
+
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:50px;
+                color:#666;
+            ">
+
+                Menu items coming soon.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    filtered.forEach(item => {
+
+        grid.innerHTML += `
+
+            <div class="menu-card">
+
+                ${createImage(item)}
+
+                <div class="menu-info">
+
+                    <div class="menu-name">
+                        ${item.name}
+                    </div>
+
+                    <div class="menu-description">
+                        ${item.description}
+                    </div>
+
+                    <div class="menu-price">
+                        ${item.price}
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+
+
+/* ==========================================
+   CREATE IMAGE
+========================================== */
+
+
+function createImage(item) {
+
+    if (item.image && item.image !== "") {
+
+        return `
+
+            <img
+                src="${item.image}"
+                class="menu-image"
+                alt="${item.name}"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+
+            <div
+                class="no-image"
+                style="display:none;"
+            >
+                Photo Coming Soon
+            </div>
+
+        `;
+
+    }
+
+
+    return `
+
+        <div class="no-image">
+            Photo Coming Soon
+        </div>
+
+    `;
+
+}
+
+
+</script>
+
+
+</body>
+</html>
